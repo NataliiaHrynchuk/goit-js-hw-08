@@ -1,17 +1,21 @@
 // Add imports above this line
-import { galleryItems } from './gallery-items';
+import imageCardsTpl from '../templates/image-cards.hbs'
+import galleryItems from './gallery-items.json';
 // Change code below this line
 import SimpleLightbox from "simplelightbox";
 import "simplelightbox/dist/simple-lightbox.min.css";
 
 console.log(galleryItems);
+console.log(imageCardsTpl(galleryItems));
+
 const imageContainer = document.querySelector('.gallery');
 
-const markup = galleryItems.map(({preview, original, description}) =>
-`<a class="gallery__item" href = ${original}><img class="gallery__image" src = ${preview} alt
- = ${description}/></a>`).join("");
+const galleryMarkup = createImageCardsMarkup(galleryItems);
 
-imageContainer.insertAdjacentHTML("afterbegin", markup);
+imageContainer.insertAdjacentHTML("afterbegin", galleryMarkup);
+function createImageCardsMarkup(galleryItems) {
+    return imageCardsTpl(galleryItems);
+}
 // imageContainer.addEventListener('click', changeCrsImages);
 
      
