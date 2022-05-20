@@ -16,8 +16,6 @@ imageContainer.insertAdjacentHTML("afterbegin", galleryMarkup);
 function createImageCardsMarkup(galleryItems) {
     return imageCardsTpl(galleryItems);
 }
-// imageContainer.addEventListener('click', changeCrsImages);
-
      
 let gallery = new SimpleLightbox('.gallery a', {
     overlayOpasity: 0.8,
