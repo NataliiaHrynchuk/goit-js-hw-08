@@ -10,7 +10,7 @@ const refs = {
     
 loadData();
 
-    const formData = {};
+const formData = {};
 
 const saveData = () => {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(formData));
@@ -32,9 +32,7 @@ function loadData() {
     
     formData[event.target.name] = event.target.value;
     // console.log(formData[event.target.name]);
-    
-
-    saveData();
+        saveData();
     
 };
 
@@ -46,7 +44,6 @@ loadData();
     } else {
         console.log(formData);
     }
-    
     refs.form.reset();
     localStorage.removeItem(STORAGE_KEY);
   };
