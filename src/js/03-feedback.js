@@ -43,10 +43,10 @@ function loadData() {
     event.preventDefault();
 loadData();
     if (refs.form.elements.email.value === '' || refs.form.elements.message.value === '') {
-        alert("Всі поля мають бути заповнені!");
-    } else {
-        console.log(formData);
-    }
+       return alert("Всі поля мають бути заповнені!");
+    } 
+    console.log(formData);
+    
     refs.form.reset();
     localStorage.removeItem(STORAGE_KEY);
   };
