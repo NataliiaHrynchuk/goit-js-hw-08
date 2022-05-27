@@ -7,18 +7,18 @@ const refs = {
 
     refs.form.addEventListener('submit', onFormSubmit);
     refs.form.addEventListener('input', throttle(onFormInput, 500));
-    
-loadData();
-
 const formData = {};
 
+loadData();
 
 function loadData() {
     const feedbackObject = JSON.parse(localStorage.getItem(STORAGE_KEY));
         
     if (feedbackObject) {
         refs.form.elements.email.value = feedbackObject.email;
+        formData.email = refs.form.elements.email.value;
         refs.form.elements.message.value = feedbackObject.message;
+        formData.message = refs.form.elements.message.value;
     }     
 };
 
